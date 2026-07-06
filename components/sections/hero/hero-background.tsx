@@ -1,9 +1,9 @@
 import { Background } from "@/components/background/background";
-import { HeroNetwork } from "@/components/visualizations/hero-network";
-import { ParticleField } from "@/components/visualizations/particle-field";
 
+/**
+ * Hero section background layer.
+ * Composes the global background system for use within the hero section.
+ */
 export function HeroBackground() {
   return <Background />;
-  return <HeroNetwork />;
-  return <ParticleField />;
 }

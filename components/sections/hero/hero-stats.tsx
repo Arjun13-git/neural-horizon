@@ -1,35 +1,26 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { heroStats } from "@/constants/stats";
+
 export function HeroStats() {
-  const stats = [
-    {
-      label: "AI Projects",
-      value: "10+",
-    },
-    {
-      label: "Research",
-      value: "2",
-    },
-    {
-      label: "Hackathons",
-      value: "6+",
-    },
-    {
-      label: "Technologies",
-      value: "30+",
-    },
-  ];
-
   return (
-    <div className="mt-16 grid grid-cols-2 gap-8 md:grid-cols-4">
-      {stats.map((stat) => (
-        <div key={stat.label}>
-          <h2 className="text-3xl font-bold">
+    <div className="mt-16 grid grid-cols-2 gap-x-8 gap-y-6 md:grid-cols-4">
+      {heroStats.map((stat, i) => (
+        <motion.div
+          key={stat.label}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6 + i * 0.1, duration: 0.5, ease: "easeOut" }}
+          className="group"
+        >
+          <div className="font-heading text-3xl font-bold text-foreground transition-colors group-hover:text-cyan-400">
             {stat.value}
-          </h2>
-
-          <p className="mt-2 text-sm text-muted-foreground">
+          </div>
+          <div className="mt-1 text-sm font-medium text-muted-foreground">
             {stat.label}
-          </p>
-        </div>
+          </div>
+        </motion.div>
       ))}
     </div>
   );

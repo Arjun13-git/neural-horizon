@@ -1,19 +1,32 @@
 export const siteConfig = {
-  name: "Neural Horizon",
-
+  name: "Arjun Shenoy R",
   owner: "Arjun Shenoy R",
-
-  title:
-    "Building Intelligent Systems through AI, Software Engineering & Research",
-
+  tagline: "Building Intelligent Systems through AI, Software Engineering & Research.",
+  title: "Arjun Shenoy R — AI Engineer & Software Developer",
   description:
-    "Portfolio of Arjun Shenoy R showcasing AI, Backend Engineering, Research and Intelligent Software Systems.",
-
-  url: "https://your-domain.vercel.app",
-
+    "Portfolio of Arjun Shenoy R — an AI/ML enthusiast and software engineer building intelligent systems through machine learning, agentic AI, backend engineering, and research.",
+  url: "https://neuralhorizon.vercel.app",
   github: "https://github.com/Arjun13-git",
-
-  linkedin: "",
-
-  email: "",
-};
+  linkedin: "https://linkedin.com/in/arjun-shenoy-r",
+  email: "arjunshenoy.dev@gmail.com",
+  location: "Mangalore, Karnataka, India",
+  college: "Sahyadri College of Engineering & Management",
+  university: "Visvesvaraya Technological University",
+  degree: "Bachelor of Engineering — Computer Science & Engineering",
+  cgpa: "8.72",
+  openGraphImage: "/og-image.png",
+  keywords: [
+    "AI Engineer",
+    "Machine Learning",
+    "Agentic AI",
+    "Backend Development",
+    "Software Engineering",
+    "Research",
+    "Python",
+    "FastAPI",
+    "LangChain",
+    "Quantum ML",
+    "Portfolio",
+    "Arjun Shenoy R",
+  ],
+} as const;

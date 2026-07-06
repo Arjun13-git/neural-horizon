@@ -1,26 +1,11 @@
-export const navigation = [
-  {
-    title: "About",
-    href: "#about",
-  },
-  {
-    title: "Projects",
-    href: "#projects",
-  },
-  {
-    title: "Research",
-    href: "#research",
-  },
-  {
-    title: "Experience",
-    href: "#experience",
-  },
-  {
-    title: "Blog",
-    href: "#blog",
-  },
-  {
-    title: "Contact",
-    href: "#contact",
-  },
+import type { NavItem } from "@/types";
+
+export const navigation: NavItem[] = [
+  { title: "About", href: "#about" },
+  { title: "Skills", href: "#skills" },
+  { title: "Experience", href: "#experience" },
+  { title: "Projects", href: "#projects" },
+  { title: "Research", href: "#research" },
+  { title: "Blog", href: "#blog" },
+  { title: "Contact", href: "#contact" },
 ];
