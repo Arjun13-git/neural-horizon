@@ -24,6 +24,11 @@ const statusConfig = {
   archived: { label: "Archived", class: "text-muted-foreground bg-muted/50 border-border" },
 };
 
+const tagColors: Record<string, string> = {
+  Frontend: "text-indigo-400 bg-indigo-500/10 border-indigo-500/20",
+  Backend: "text-orange-400 bg-orange-500/10 border-orange-500/20",
+};
+
 function ProjectCard({ project, index }: { project: Project; index: number }) {
   const status = statusConfig[project.status];
 
@@ -79,6 +84,23 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         </div>
       </div>
 
+      {/* Tags row */}
+      {project.tags && project.tags.length > 0 && (
+        <div className="mt-3 flex flex-wrap gap-1.5">
+          {project.tags.map((tag) => (
+            <span
+              key={tag}
+              className={cn(
+                "inline-flex items-center rounded-full border px-2 py-0.5 text-xs font-medium",
+                tagColors[tag] ?? "text-muted-foreground bg-secondary border-border"
+              )}
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      )}
+
       {/* Description */}
       <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground line-clamp-3">
         {project.description}
@@ -122,56 +144,95 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
   );
 }
 
+const FEATURED_SLUGS = new Set([
+  "quantum-ml-galaxy",
+  "sentinel-agents",
+  "dyslexia-risk-prediction",
+  "promptguard",
+  "aether-geoint",
+  "safe-horizon",
+]);
+
 export function ProjectsGrid({ projects }: { projects: Project[] }) {
   const [activeFilter, setActiveFilter] = useState<ProjectCategory | "all">("all");
 
+  const featuredProjects = projects.filter((p) => FEATURED_SLUGS.has(p.slug));
+  const allProjects = projects;
+
   const filtered =
     activeFilter === "all"
-      ? projects
-      : projects.filter((p) => p.category === activeFilter);
+      ? allProjects
+      : allProjects.filter((p) => p.category === activeFilter);
 
   return (
     <div>
-      {/* Filter bar */}
-      <div
-        className="mb-10 flex flex-wrap gap-2 justify-center"
-        role="group"
-        aria-label="Filter projects by category"
-      >
-        {FILTERS.map(({ label, value }) => (
-          <button
-            key={value}
-            onClick={() => setActiveFilter(value)}
-            aria-pressed={activeFilter === value}
-            className={cn(
-              "rounded-full px-4 py-2 text-sm font-medium transition-all duration-200",
-              activeFilter === value
-                ? "bg-cyan-500/20 text-cyan-400 border border-cyan-500/40"
-                : "border border-border text-muted-foreground hover:border-cyan-500/30 hover:text-foreground"
-            )}
-          >
-            {label}
-          </button>
-        ))}
-      </div>
+      {/* ── Featured Projects ───────────────────────────────────────────── */}
+      <div className="mb-20">
+        <div className="mb-8 flex items-center gap-3">
+          <Star className="h-4 w-4 fill-amber-400 text-amber-400" aria-hidden="true" />
+          <h3 className="font-heading text-lg font-semibold text-foreground">
+            Featured Projects
+          </h3>
+          <div className="flex-1 h-px bg-border" />
+        </div>
 
-      {/* Grid */}
-      <motion.div
-        layout
-        className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3"
-      >
-        <AnimatePresence mode="popLayout">
-          {filtered.map((project, i) => (
+        <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+          {featuredProjects.map((project, i) => (
             <ProjectCard key={project.slug} project={project} index={i} />
           ))}
-        </AnimatePresence>
-      </motion.div>
+        </div>
+      </div>
 
-      {filtered.length === 0 && (
-        <p className="py-16 text-center text-muted-foreground">
-          No projects in this category yet.
-        </p>
-      )}
+      {/* ── All Projects ────────────────────────────────────────────────── */}
+      <div>
+        <div className="mb-8 flex items-center gap-3">
+          <h3 className="font-heading text-lg font-semibold text-foreground">
+            All Projects
+          </h3>
+          <div className="flex-1 h-px bg-border" />
+        </div>
+
+        {/* Filter bar */}
+        <div
+          className="mb-10 flex flex-wrap gap-2 justify-center"
+          role="group"
+          aria-label="Filter projects by category"
+        >
+          {FILTERS.map(({ label, value }) => (
+            <button
+              key={value}
+              onClick={() => setActiveFilter(value)}
+              aria-pressed={activeFilter === value}
+              className={cn(
+                "rounded-full px-4 py-2 text-sm font-medium transition-all duration-200",
+                activeFilter === value
+                  ? "bg-cyan-500/20 text-cyan-400 border border-cyan-500/40"
+                  : "border border-border text-muted-foreground hover:border-cyan-500/30 hover:text-foreground"
+              )}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+
+        {/* Grid */}
+        <motion.div
+          layout
+          className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3"
+        >
+          <AnimatePresence mode="popLayout">
+            {filtered.map((project, i) => (
+              <ProjectCard key={project.slug} project={project} index={i} />
+            ))}
+          </AnimatePresence>
+        </motion.div>
+
+        {filtered.length === 0 && (
+          <p className="py-16 text-center text-muted-foreground">
+            No projects in this category yet.
+          </p>
+        )}
+      </div>
     </div>
   );
 }

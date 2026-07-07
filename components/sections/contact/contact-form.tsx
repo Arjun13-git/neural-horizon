@@ -211,8 +211,8 @@ export function ContactForm() {
             >
               <AlertCircle className="h-4 w-4 shrink-0" aria-hidden="true" />
               Something went wrong. Please email me directly at{" "}
-              <a href="mailto:arjunshenoy.dev@gmail.com" className="underline">
-                arjunshenoy.dev@gmail.com
+              <a href="mailto:ranjalarjunshenoy@gmail.com" className="underline">
+                ranjalarjunshenoy@gmail.com
               </a>
             </div>
           )}

@@ -95,7 +95,7 @@ export function Navbar() {
         {/* Desktop Actions */}
         <div className="hidden items-center gap-3 md:flex">
           <a
-            href="/resume.pdf"
+            href={siteConfig.resumeUrl}
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`Download ${siteConfig.owner}'s resume`}
@@ -151,7 +151,7 @@ export function Navbar() {
               })}
               <div className="mt-4 pt-4 border-t border-border">
                 <a
-                  href="/resume.pdf"
+                  href={siteConfig.resumeUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex w-full items-center justify-center h-9 rounded-lg bg-cyan-500 text-black text-sm font-semibold hover:bg-cyan-400 transition-colors"

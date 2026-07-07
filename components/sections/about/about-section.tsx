@@ -82,7 +82,8 @@ export function AboutSection() {
                 and an AI product is pure engineering discipline.
               </p>
               <p>
-                I&apos;m currently working as a Software Engineering Intern at Datavex.ai,
+                I&apos;m currently working as a Software Engineering Intern at{" "}
+                <span className="font-medium text-foreground">Datavex AI Pvt Ltd</span>,
                 building AI-powered products and enterprise software — turning academic
                 theory into production-grade systems that solve real problems.
               </p>
@@ -136,11 +137,12 @@ export function AboutSection() {
             {/* Availability badge */}
             <div className="flex items-center gap-3 rounded-xl border border-emerald-500/20 bg-emerald-500/5 p-5">
               <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-emerald-400 animate-pulse" />
-              <p className="text-sm font-medium text-emerald-400">
-                {siteConfig.url
-                  ? "Available for Internships · Placements · Research"
-                  : "Available for Opportunities"}
-              </p>
+              <div>
+                <p className="text-sm font-medium text-emerald-400">Available for Placements</p>
+                <p className="mt-0.5 text-xs text-muted-foreground">
+                  Software Engineering Intern · Datavex AI Pvt Ltd
+                </p>
+              </div>
             </div>
           </motion.div>
         </div>

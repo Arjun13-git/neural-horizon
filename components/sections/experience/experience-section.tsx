@@ -1,5 +1,5 @@
 import { getAllExperience } from "@/lib/content";
-import { ExperienceTimeline } from "./experience-timeline";
+import { InternshipCards } from "./internship-cards";
 
 export async function ExperienceSection() {
   const experiences = getAllExperience();
@@ -10,7 +10,7 @@ export async function ExperienceSection() {
       className="py-24 px-6"
       aria-labelledby="experience-heading"
     >
-      <div className="mx-auto max-w-4xl">
+      <div className="mx-auto max-w-5xl">
         <div className="mb-16 text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-cyan-400">
             Experience
@@ -19,15 +19,15 @@ export async function ExperienceSection() {
             id="experience-heading"
             className="mt-3 font-heading text-3xl font-bold md:text-4xl"
           >
-            Journey &amp; Experience
+            Internships
           </h2>
           <p className="mt-4 mx-auto max-w-xl text-muted-foreground">
-            Internships, training programs, and hands-on engineering work that
-            have shaped my engineering approach.
+            Hands-on engineering work and production-level internship experience
+            that have shaped my approach to building real-world systems.
           </p>
         </div>
 
-        <ExperienceTimeline experiences={experiences} />
+        <InternshipCards experiences={experiences} />
       </div>
     </section>
   );

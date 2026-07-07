@@ -3,6 +3,7 @@
 import { ArrowRight, Download } from "lucide-react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { siteConfig } from "@/config/site";
 
 const buttonBase = "inline-flex shrink-0 items-center justify-center rounded-lg text-sm font-semibold whitespace-nowrap transition-all outline-none focus-visible:ring-2 focus-visible:ring-ring";
 
@@ -26,7 +27,7 @@ export function HeroActions() {
       </a>
 
       <a
-        href="/resume.pdf"
+        href={siteConfig.resumeUrl}
         target="_blank"
         rel="noopener noreferrer"
         className={cn(

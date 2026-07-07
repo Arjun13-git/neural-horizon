@@ -1,30 +1,24 @@
 ---
 slug: promptguard
 title: "PromptGuard"
-description: "Adaptive AI middleware for protecting LLMs against prompt injection attacks through intelligent prompt validation and adaptive filtering."
+description: "Intelligent middleware protecting LLMs against prompt injection, jailbreak attempts, and malicious prompts — built at AMD Slingshot 2026 with multi-layer adaptive filtering."
 tech: ["Python", "LLM APIs", "AI Middleware", "Security", "FastAPI"]
 category: ai
 status: completed
 featured: true
 date: "2026-04-01"
+tags: ["Backend"]
 highlights:
-  - "Detects and filters prompt injection attempts"
-  - "Adaptive rule engine that evolves with new attack patterns"
-  - "Middleware architecture — drop-in protection layer"
-  - "AI-powered analysis of prompt intent and safety"
+  - "Multi-layer validation: pattern matching, semantic analysis, and adaptive filtering"
+  - "Drop-in middleware architecture with zero latency overhead for safe inputs"
+  - "Adaptive rule engine that evolves with new prompt injection patterns"
+  - "Built at AMD Slingshot 2026 Hackathon"
 ---
 
 ## Problem
 
-As LLMs become embedded in production systems, prompt injection attacks represent a critical security risk. PromptGuard acts as an intelligent middleware layer between user inputs and LLM backends.
+As LLMs become embedded in production systems, prompt injection represents a critical security risk. PromptGuard acts as an intelligent middleware layer between user inputs and LLM backends — protecting against injection, jailbreaks, and unsafe interactions.
 
 ## Approach
 
-PromptGuard uses a multi-layer validation approach:
-1. **Pattern matching** — known injection signatures
-2. **Semantic analysis** — AI-based intent detection
-3. **Adaptive filtering** — learns from new attack patterns
-
-## Architecture
-
-Designed as a drop-in middleware that intercepts prompts before they reach the LLM, adds zero latency overhead for safe inputs, and gracefully handles flagged requests with configurable responses.
+Multi-layer validation: pattern matching for known signatures, semantic AI-based intent detection, and an adaptive filtering engine that learns from emerging attack patterns.

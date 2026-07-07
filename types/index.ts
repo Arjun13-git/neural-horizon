@@ -11,6 +11,7 @@ export interface Project {
   demo?: string;
   date: string;
   highlights?: string[];
+  tags?: string[];
 }
 
 export type ProjectCategory = "ai" | "backend" | "research" | "frontend" | "tools";

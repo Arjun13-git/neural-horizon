@@ -1,30 +1,27 @@
 ---
 slug: cryptographic-swarm
-title: "Cryptographic Swarm Agent System"
-description: "Swarm-based intelligent architecture for secure computational workflows — combining multi-agent coordination with distributed reasoning."
-tech: ["Python", "AI Agents", "Swarm Intelligence", "LangChain", "Cryptography"]
-category: ai
-status: research
+title: "ZK Swarm"
+description: "A privacy-preserving multi-agent backend platform leveraging Zero-Knowledge Proof concepts and AI-driven agents for secure, verifiable collaboration."
+tech: ["FastAPI", "Python", "MongoDB", "Redis", "Docker", "JWT Authentication", "REST APIs", "Multi-Agent Architecture", "Zero-Knowledge Proof Concepts", "Backend Systems"]
+category: backend
+status: completed
 featured: false
 date: "2026-05-01"
+tags: ["Backend"]
 highlights:
-  - "Swarm intelligence architecture with coordinated agents"
-  - "Distributed reasoning across multiple operation engines"
-  - "Secure arithmetic workflow automation"
-  - "Modular execution with agent specialization"
+  - "Modular backend services with intelligent agent orchestration"
+  - "Secure proof-based workflows using Zero-Knowledge Proof concepts"
+  - "Scalable REST APIs with JWT authentication and Redis caching"
+  - "Multi-agent coordination for distributed, verifiable task execution"
 ---
 
-## Concept
+## Overview
 
-The Cryptographic Swarm Agent System explores the intersection of swarm intelligence and secure computation. Multiple specialized agents coordinate to execute cryptographic workflows in a distributed, fault-tolerant manner.
+ZK Swarm is a privacy-preserving multi-agent backend platform that combines Zero-Knowledge Proof concepts with AI-driven autonomous agents. Designed for secure, verifiable collaboration at scale — agents coordinate through proof-based workflows without exposing sensitive intermediate state.
 
 ## Architecture
 
-- **Swarm Coordinator** — orchestrates agent collaboration
-- **Cryptographic Engine Agents** — handle individual operations
-- **Verification Agents** — validate computational results
-- **Aggregation Layer** — combines distributed outputs
-
-## Status
-
-Architecture and concept under active exploration. Serves as a research platform for multi-agent coordination patterns.
+- **Agent Orchestrator** — coordinates autonomous agents across task pipelines
+- **ZK Proof Layer** — validates agent outputs without revealing internal computation
+- **Backend Services** — FastAPI microservices with MongoDB persistence and Redis caching
+- **Auth Layer** — JWT-secured API endpoints with role-based access

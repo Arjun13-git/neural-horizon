@@ -8,7 +8,8 @@ import { ProjectsSection } from "@/components/sections/projects/projects-section
 import { ResearchSection } from "@/components/sections/research/research-section";
 import { AchievementsSection } from "@/components/sections/achievements/achievements-section";
 import { CertificationsSection } from "@/components/sections/certifications/certifications-section";
-import { BlogSection } from "@/components/sections/blog/blog-section";
+// Blog is hidden — import kept for future re-enabling
+// import { BlogSection } from "@/components/sections/blog/blog-section";
 import { ContactSection } from "@/components/sections/contact/contact-section";
 
 export default function Home() {
@@ -26,7 +27,7 @@ export default function Home() {
         {/* Skills */}
         <SkillsSection />
 
-        {/* Experience */}
+        {/* Experience / Internships */}
         <ExperienceSection />
 
         {/* Projects */}
@@ -35,14 +36,14 @@ export default function Home() {
         {/* Research */}
         <ResearchSection />
 
-        {/* Achievements */}
+        {/* Competitions & Experience */}
         <AchievementsSection />
 
         {/* Certifications */}
         <CertificationsSection />
 
-        {/* Blog */}
-        <BlogSection />
+        {/* Blog — hidden; re-enable by uncommenting below */}
+        {/* <BlogSection /> */}
 
         {/* Contact */}
         <ContactSection />

@@ -10,6 +10,9 @@ const socialLinks = [
   { label: "Email", href: `mailto:${siteConfig.email}`, Icon: Mail },
 ];
 
+// Filter out comment-only entries (entries without href starting with #)
+const navLinks = navigation.filter((item) => item.href.startsWith("#"));
+
 export function Footer() {
   const year = new Date().getFullYear();
 
@@ -50,7 +53,7 @@ export function Footer() {
               Navigate
             </h3>
             <nav className="flex flex-col gap-3" aria-label="Footer navigation">
-              {navigation.map((item) => (
+              {navLinks.map((item) => (
                 <a
                   key={item.title}
                   href={item.href}
